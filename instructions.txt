@@ -38,6 +38,9 @@ what people come up with in ZDoom!
 - Minor tweaks here and there to make use of new ZDoom features (long file
   names, named scripts, etc).
 
+13/02/2010 (version 1.0)
+- First release.
+ 
 ========================================
              PREREQUISITES              
 ========================================
