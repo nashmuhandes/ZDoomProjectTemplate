@@ -1,0 +1,245 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// NASH'S (G)ZDOOM PROJECT TEMPLATE
+// Version 2.0
+// Created by Nash Muhandes
+// You can reach me on the ZDoom and DRDTeam forums. But I'm more active
+// on the ZDoom forums.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+Get the latest version of this project template at:
+
+https://github.com/nashmuhandes/ZDoomProjectTemplate/
+
+ZDoom forum thread:
+
+http://forum.zdoom.org/viewtopic.php?f=3&t=25083
+
+Youtube video tutorial:
+
+http://youtu.be/ncHR831LBfk
+
+========================================
+              PERMISSIONS               
+========================================
+
+You are free to use this project template for anything you can think of. No
+need to ask for my permission, although a mention in the credits would be nice!
+And definitely tell me about your projects, I am always looking forward to see
+what people come up with in ZDoom!
+
+========================================
+              WHAT'S NEW?               
+========================================
+
+15/06/2014 (version 2.0)
+- Removed KSSC dependency and replaced it with ZSDF.
+- Minor tweaks here and there to make use of new ZDoom features (long file
+  names, named scripts, etc).
+
+========================================
+             PREREQUISITES              
+========================================
+
+These tools MUST be installed or compile will fail!
+
+Name:        ACC 1.54 (or later)
+Description: The standard ACC compiler for ZDoom.
+Link:        http://zdoom.org/Download
+
+Name:        Latest ACC headers
+Description: Overwrite ACC 1.54's headers with the latest copies from the
+             following GitHub repository. You only need to download the *.acs
+             files.
+Link:        https://github.com/rheit/acc
+
+Name:        FBInserter
+Description: Inserts compiled ACS objects into map WADs.
+Link:        https://github.com/nashmuhandes/FBInserter/tree/master/bin/win32
+
+Name:        7-Zip
+Description: A compression utility with command line support.
+Link:        http://www.7-zip.org/
+
+-------------------------------------------------------------------------------
+
+========================================
+             OPTIONAL TOOLS             
+========================================
+
+Not needed, but these are some useful modding tools
+
+Name:        grabpng
+Description: For offsetting your PNGs. Also has some useful batch operations.
+             Please read the README.
+Link:        http://baghead.drdteam.org/grabpng.xml
+
+Name:        Doomcrap 0.1.4
+Description: Includes ZDoom Font Generator and some other useful ZDoom modding
+             tools.
+Link:        http://baghead.drdteam.org/tools.xml
+
+Name:        GZDoom Builder
+Description: A full-featured, WYSIWYG map editor with (G)ZDoom-specific
+             capabilities (scroll to the bottom of the thread for download
+             links).
+Link:        http://forum.zdoom.org/viewtopic.php?f=3&t=32392
+
+Name:        SLumpEd
+Description: A general lump manager. You might need this for some operations.
+Link:        http://slade.mancubus.net/
+
+Name:        TEXTURES Creator
+Description: A small tool to automatically generate a TEXTURES file from
+             a given directory. Extremely useful to automate the processing of
+             hundreds or even thousands of textures!
+Link:        http://forum.zdoom.org/viewtopic.php?f=3&t=33568
+
+-------------------------------------------------------------------------------
+
+========================================
+             INSTRUCTIONS               
+========================================
+
+1) Download all the tools listed in the "Prerequisites" section. These must be
+installed and configured properly, otherwise your project will not compile
+properly.
+
+2) Extract all of the tools to any directory on your hard disk. I have mine
+set up in D:\Games\DOOM\UTILS, like so:
+
+D:\
+	Games\
+		DOOM\
+			UTILS\
+				ACC\
+				FBINSERTER\
+
+You can install your stuff any way you like; this is just an example.
+
+Be sure to also properly install 7-Zip (either by using the installer, or
+manually extracting it to your preferred location).
+
+3) Add all of the tools to your PATH...
+
+	3.A) If you're using Windows XP, right-click My Computer, Properties, then
+	click on the "Advanced" tab. Look for the "Environment Variables" button.
+
+	3.B) For Windows Vista, right-click My Computer, Properties, and under the
+	"Tasks" sidebar to the left, choose "Advanced system settings". Now click
+	the "Advanced" tab, then click the "Environment Variables" button at the
+	bottom.
+
+	3.C) For Windows 7, right-click My Computer, Properties. Under the "Control
+	Panel Home" sidebar to the left, choose "Advanced system settings". Choose
+	the "Advanced" tab, then finally the "Environment Variables" button at the
+	bottom.
+	
+	3.D) Windows 8, open the Start menu, then in the Search box, type Control
+	Panel. Scroll down to System and click it. Look to the left sidebar for
+	"Advanced System Settings" and click it. Under the "Advanced" tab, click
+	the "Environment Variables" button at the bottom.
+
+4) Look under the "System variables" box, and scroll down until you see the
+variable named "PATH". Now hit "Edit..." - you should see a long string of
+stuff in the "Variable value" text box. DO NOT modify this as it has important
+stuff that Windows has configured for you. Instead, move your text cursor
+to the end of the text box (left-click anywhere in the text box, then hit
+the "End" key on your keyboard). You are now going to add new directories
+to your PATH. For every new directory you add into this text box, you must
+end it with a semicolon (;).
+
+5) Be sure your cursor is at the end of the text box. If there isn't any
+semi colon at the end of the last directory defined in the text box, add it
+in now.
+
+6) Now add the directories of all the prerequisite tools into your PATH.
+For example, mine would look something like below. Modify the pathnames
+according to your system's needs.
+
+d:\games\doom\utils\acc;d:\games\doom\utils\image2textures;d:\games\doom\utils\fbinserter;C:\Program Files\7-Zip;
+
+REMEMBER, ADD TO THE PATH, DO NOT OVERWRITE YOUR EXISTING PATH ENTRIES OR
+YOU'LL RISK SCREWING UP YOUR WINDOWS INSTALLATION! IF YOU ARE NOT SURE WHAT
+YOU ARE DOING, HIT THE CANCEL BUTTON AND GET SOMEONE TO HELP YOU OR GOOGLE
+SEARCH FOR "WINDOWS ENVIRONMENT VARIABLES" AND READ UP ON IT!
+
+7) Now that everything is setup, extract the project template anywhere on
+your hard disk. For example, D:\Games\DOOM\myproj\.
+
+8) You may rename the "myproj" directory to whatever your project name is.
+I'm not sure what'll happen if the name contains more than 8 characters, but
+just to be safe, I'd recommend you limit your directory name to 8 characters.
+For example, "mynewmod".
+
+9) Edit compile.bat, go to line 20 and 21, and edit the path to your (G)ZDoom
+executable and also the EXE itself.
+
+10) Go to line 24 and set the path to your mod. For example,
+D:\Games\DOOM\myproj\. If your mod is located elsewhere, for example
+E:\John\Projects\mynewmod - then make sure it is entered correctly.
+
+Now save the changes you made to compile.bat
+
+11) Edit make_pk3.bat, go to line 9 and change the name of your final PK3 here.
+make_pk3.bat is only used to compile and finalize everything and neatly package
+them all into a PK3 for release/distribution. Save your changes.
+
+12) You are done! Navigate into the "src" directory. I have included commonly
+used lumps for your convenience, and created some example content for you.
+You are now basically working on your mod by editing the files directly on your
+hard disk. No more WAD tools needed!
+
+13) Whenever you need to run your project, just double-click play.bat. If
+there were no errors in your ACS and you have correctly set the path to your
+(G)ZDoom executables, the game should run. I have added error checking for
+ACS scripts, so the game will not start if any ACS errors come up.
+
+-------------------------------------------------------------------------------
+
+========================================
+               MISC TIPS                
+========================================
+
+You can use your favourite text editor to edit your ACS scripts. I personally
+use Notepad++.
+
+Your map scripts are now stored in the maps directory. If you are using
+(GZ)Doom Builder, there is no need to use the built-in script editor. Just
+edit the ACS files directly in the maps directory.
+
+grabpng can be used to offset your PNG sprites. Associate your PNG files with
+grabpng, so that you can right-click your PNG, choose Open With -> grabpng.
+
+The latest development builds of SLADE 3 can also be used to offset your PNGs -
+there is a new "Open Directory" feature in File menu in the latest version of
+SLADE that allows you to do just that.
+
+The compiler ignores directories named "src" - so how is this useful? If you're
+working with graphics, you can store your "master files" inside an "src"
+directory and it'll be ignored during runtime. For example, if you're a
+Photoshop user, then no doubt you'd want to keep your master PSD files around
+in case you need to change anything. So if you have a high resolution TITLEPIC
+that you created in Photoshop, you'd create an "src" directory inside the
+"graphics" directory. TITLEPIC.PSD would go into the "src" directory, and
+TITLEPIC.PNG (the lump that (G)ZDoom will show) will go into the "graphics"
+directory. See the following example.
+
+D:\
+	Games\
+		DOOM\
+			myproj\
+				src\
+					graphics\
+						titlepic.png
+					src\
+						titlepic.psd
+
+Hope this makes sense. It's done this way because you do not want to have both
+the PSD and the PNG file in the "graphics" directory - (G)ZDoom will complain
+about this.
+
+Happy modding!
+
+Nash Muhandes 2014

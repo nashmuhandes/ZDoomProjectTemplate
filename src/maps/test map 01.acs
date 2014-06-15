@@ -1,0 +1,6 @@
+#include "zcommon.acs"
+
+Script 1 OPEN
+{
+	HUDMessage(s: "Map script 2.0 executed."; HUDMSG_PLAIN, 0, CR_UNTRANSLATED, 0.5, 0.5, 5.0);
+}

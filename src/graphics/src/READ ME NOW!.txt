@@ -1,0 +1,2 @@
+This directory will be ignored when using make_pk3.bat to package your final
+PK3.

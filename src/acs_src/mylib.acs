@@ -1,0 +1,8 @@
+#library "mylib"
+
+#include "zcommon.acs"
+
+Script "Script_MyLib" ENTER
+{
+	Print(s: "Main library 2.0 executed!");
+}

@@ -1,0 +1,21 @@
+Actor MyActor 20000
+{
+	Radius 32
+	Height 32
+	Tag "Custom Actor" // the actor's name in a ZSDF dialogue
+	Scale 0.5
+	MONSTER
+	+FRIENDLY
+	States
+	{
+		Spawn:
+			HEHE A 1 A_Look
+			Loop
+		See:
+			HEHE A 1 A_Chase
+			Loop
+		Death:
+			TNT1 A 1
+			Stop
+	}
+}
