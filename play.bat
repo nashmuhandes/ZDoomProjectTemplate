@@ -2,7 +2,7 @@ call compile.bat
 
 :compileend
 
-cd %exepath%
+cd /d %exepath%
 %exename% -noautoload -file %projectpath%\%sourcedirname%
 
 exit

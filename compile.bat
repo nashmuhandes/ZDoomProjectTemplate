@@ -60,7 +60,7 @@ echo ACS compiled successfully.
 REM Go to the ACS directory to do some cleaning up
 cd ../acs
 
-REM These 4 objects aren't necessary
+REM These objects aren't necessary
 del zcommon.o
 del zdefs.o
 del zspecial.o
@@ -68,6 +68,7 @@ del zwvars.o
 
 REM Generate the LOADACS
 type NUL > ../loadacs.txt
+echo // Generated automatically by build script at %TIME% on %DATE%, do not edit>>../loadacs.txt
 for %%v in (*.o) do (
 echo %%~nv>>../loadacs.txt
 )
